@@ -140,12 +140,32 @@ tailwind.config = {
       </div>
     </div>
 
-    <!-- Right Photo Column -->
+    <!-- Right Photo + Stats Column -->
     <div class="md:col-span-3 relative">
       <div class="aspect-[3/4] bg-surface-container-high rounded-xl overflow-hidden shadow-sm relative z-10 translate-y-8">
         <img src="photo.jpg" alt="Seon Yong Lee" class="w-full h-full object-cover object-top grayscale contrast-125"/>
       </div>
       <div class="absolute -top-4 -right-4 w-32 h-32 bg-tertiary-fixed opacity-20 rounded-full blur-3xl -z-10"></div>
+
+      <!-- Citation Stats Card -->
+      <div class="mt-12 bg-surface-container-low rounded-xl p-5 space-y-3">
+        <span class="font-inter text-[10px] tracking-widest uppercase opacity-60 block">Citation Metrics</span>
+        <div class="grid grid-cols-3 gap-2 text-center">
+          <div>
+            <p class="font-newsreader text-2xl font-bold text-primary" id="stat-citations">—</p>
+            <p class="font-inter text-[10px] text-secondary uppercase tracking-wide mt-1">Citations</p>
+          </div>
+          <div>
+            <p class="font-newsreader text-2xl font-bold text-primary" id="stat-hindex">—</p>
+            <p class="font-inter text-[10px] text-secondary uppercase tracking-wide mt-1">h-index</p>
+          </div>
+          <div>
+            <p class="font-newsreader text-2xl font-bold text-primary" id="stat-works">—</p>
+            <p class="font-inter text-[10px] text-secondary uppercase tracking-wide mt-1">Papers</p>
+          </div>
+        </div>
+        <p class="font-inter text-[9px] text-secondary/50 text-right">via OpenAlex</p>
+      </div>
     </div>
 
   </section>
@@ -158,12 +178,14 @@ tailwind.config = {
           <span class="font-inter text-xs tracking-widest uppercase opacity-70 mb-4 block">Selected Works</span>
           <h2 class="font-newsreader text-4xl font-bold text-primary">Key Publications</h2>
         </div>
-        <a class="font-inter text-sm font-bold text-primary border-b border-primary/20 pb-1 hover:border-primary transition-all" href="#">View Full Bibliography</a>
+        <a class="font-inter text-sm font-bold text-primary border-b border-primary/20 pb-1 hover:border-primary transition-all"
+           href="https://scholar.google.ca/citations?hl=en&user=1CzFQ8QAAAAJ" target="_blank" rel="noopener noreferrer">View Full Bibliography</a>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
 
         <!-- Publication 1 -->
-        <a href="https://doi.org/10.1016/j.celrep.2024.114417" target="_blank" rel="noopener noreferrer" class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:translate-y-[-4px] transition-transform duration-300 group block no-underline h-full">
+        <a href="https://doi.org/10.1016/j.celrep.2024.114417" target="_blank" rel="noopener noreferrer"
+           class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:translate-y-[-4px] transition-transform duration-300 group block no-underline h-full">
           <div class="flex justify-between items-start mb-6">
             <span class="font-inter text-[10px] tracking-widest uppercase text-secondary/60">Cell Reports • 2024</span>
             <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">north_east</span>
@@ -188,7 +210,7 @@ tailwind.config = {
             <span class="font-inter text-[10px] tracking-widest uppercase text-secondary/60">BMC Biology • 2024</span>
             <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">north_east</span>
           </div>
-          <!-- Featured badge — stops propagation so only badge link fires -->
+          <!-- Featured badge -->
           <div class="mb-4">
             <span onclick="event.stopPropagation(); window.open('https://communities.springernature.com/posts/world-cancer-day-2026-75c9d8be-31d2-4ced-b07c-4d5dae0deef5','_blank');"
                style="cursor:pointer; background-color:#e0e7ff; color:#3730a3;"
@@ -225,6 +247,24 @@ tailwind.config = {
   </section>
 
 </main>
+
+<!-- OpenAlex Stats Script -->
+<script>
+(async () => {
+  try {
+    const res = await fetch('https://api.openalex.org/authors/orcid:0000-0003-3297-008X?mailto=sylee2793@gmail.com');
+    const data = await res.json();
+    const citations = data.cited_by_count ?? null;
+    const works = data.works_count ?? null;
+    const hindex = data.summary_stats?.h_index ?? null;
+    if (citations !== null) document.getElementById('stat-citations').textContent = citations.toLocaleString();
+    if (hindex !== null) document.getElementById('stat-hindex').textContent = hindex;
+    if (works !== null) document.getElementById('stat-works').textContent = works;
+  } catch (e) {
+    console.warn('OpenAlex fetch failed', e);
+  }
+})();
+</script>
 
 <!-- Footer -->
 <footer class="w-full py-12 border-t border-slate-100 bg-surface">
