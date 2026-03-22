@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta name="description" content="Postdoctoral Researcher at the Moffat Lab, SickKids | University of Toronto. Studying condensate biology, CRISPR screening, and cell volume regulation in pediatric brain tumors."/>
-<title>Seon Yong Lee</title>
+<meta name="description" content="Postdoctoral Researcher at the Moffat Lab, SickKids. My research centers on a fundamental question: how do cells sense and respond to changes in their own size? At the Moffat Lab, I investigate the TSC22D–WNK–NRBP (TWN) condensate network — a molecular sensor that detects macromolecular crowding and rewires cell volume regulation accordingly. Using genome-wide CRISPR screening and advanced imaging technologies, I explore the multifaceted functions of this novel condensate network, with the ultimate goal of uncovering new therapeutic vulnerabilities."/>
+<title>Yong Street</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400;1,6..72,700&display=swap" rel="stylesheet"/>
@@ -140,12 +140,8 @@ tailwind.config = {
 
     <!-- Right Photo Column -->
     <div class="md:col-span-3 relative">
-      <div class="aspect-[3/4] bg-surface-container-high rounded-xl overflow-hidden shadow-sm relative z-10 translate-y-8 flex items-center justify-content:center">
-        <!-- Replace the div below with: <img src="your-photo.jpg" alt="Seon Yong Lee" class="w-full h-full object-cover grayscale contrast-125"/> -->
-        <div style="width:100%;height:100%;background:#e4e1ea;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-          <div style="width:56px;height:56px;border-radius:50%;background:#c6c5d4;display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-size:22px;font-weight:700;color:#454652;">SL</div>
-          <span style="font-family:'Inter',sans-serif;font-size:12px;color:#767683;">Upload your photo</span>
-        </div>
+      <div class="aspect-[3/4] bg-surface-container-high rounded-xl overflow-hidden shadow-sm relative z-10 translate-y-8">
+        <img src="photo.jpg" alt="Seon Yong Lee" class="w-full h-full object-cover object-top grayscale contrast-125"/>
       </div>
       <div class="absolute -top-4 -right-4 w-32 h-32 bg-tertiary-fixed opacity-20 rounded-full blur-3xl -z-10"></div>
     </div>
@@ -165,7 +161,7 @@ tailwind.config = {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
         <!-- Publication 1 -->
-        <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:translate-y-[-4px] transition-transform duration-300 group">
+        <a href="https://doi.org/10.1016/j.celrep.2024.114417" target="_blank" rel="noopener noreferrer" class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:translate-y-[-4px] transition-transform duration-300 group block no-underline">
           <div class="flex justify-between items-start mb-6">
             <span class="font-inter text-[10px] tracking-widest uppercase text-secondary/60">Cell Reports • 2024</span>
             <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">north_east</span>
@@ -174,19 +170,28 @@ tailwind.config = {
             The TSC22D, WNK, and NRBP gene families exhibit functional buffering and evolved with Metazoa for cell volume regulation
           </h3>
           <p class="font-body text-sm text-on-surface-variant line-clamp-2 mb-6">
-            Systematic functional genomic analysis of the TWN gene families revealing their co-evolution with Metazoa and roles in macromolecular crowd sensing.
+            Systematic functional genomics analysis of the TWN gene families revealing their co-evolution with Metazoa and roles in macromolecular crowd sensing.
           </p>
           <div class="flex gap-2">
             <span class="px-2 py-0.5 bg-surface-container text-on-surface-variant text-[10px] rounded uppercase tracking-tighter">Cell Biology</span>
             <span class="px-2 py-0.5 bg-surface-container text-on-surface-variant text-[10px] rounded uppercase tracking-tighter">Functional Genomics</span>
           </div>
-        </div>
+        </a>
 
         <!-- Publication 2 -->
-        <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:translate-y-[-4px] transition-transform duration-300 group">
-          <div class="flex justify-between items-start mb-6">
+        <a href="https://doi.org/10.1186/s12915-024-01829-w" target="_blank" rel="noopener noreferrer" class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:translate-y-[-4px] transition-transform duration-300 group block no-underline">
+          <div class="flex justify-between items-start mb-4">
             <span class="font-inter text-[10px] tracking-widest uppercase text-secondary/60">BMC Biology • 2024</span>
             <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">north_east</span>
+          </div>
+          <!-- Featured badge -->
+          <div class="mb-4">
+            <a href="https://communities.springernature.com/posts/world-cancer-day-2026-75c9d8be-31d2-4ced-b07c-4d5dae0deef5" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"
+               class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-semibold tracking-wide no-underline"
+               style="background-color:#e0e7ff;color:#3730a3;">
+              <span class="material-symbols-outlined" style="font-size:12px;">star</span>
+              Featured · BMC Biology World Cancer Day 2026
+            </a>
           </div>
           <h3 class="font-newsreader text-2xl font-bold text-primary mb-4 leading-snug">
             Migrasomal autophagosomes relieve endoplasmic reticulum stress in glioblastoma cells
@@ -198,7 +203,7 @@ tailwind.config = {
             <span class="px-2 py-0.5 bg-surface-container text-on-surface-variant text-[10px] rounded uppercase tracking-tighter">Cancer Biology</span>
             <span class="px-2 py-0.5 bg-surface-container text-on-surface-variant text-[10px] rounded uppercase tracking-tighter">GBM</span>
           </div>
-        </div>
+        </a>
 
       </div>
     </div>
